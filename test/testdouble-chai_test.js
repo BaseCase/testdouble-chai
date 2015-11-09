@@ -19,12 +19,40 @@ describe("testdouble-chai", function() {
         var test_double = td.function("dubs");
         expect(function() {
           expect(test_double).to.have.been.called;
-        }).to.throw(chai.AssertionError, "AssertionError: Expected " +
+        }).to.throw(chai.AssertionError, "AssertionError: expected " +
                                          test_double +
                                          " to have been called but it was not.");
       });
 
       it("throws an exception if called on an object that isn't a testdouble");
+      it("also works in a negated chain");
+    });
+
+
+    describe(".calledWith", function() {
+      it("is a method in a chai expect chain that matches against function arguments", function() {
+        var test_double = td.function("dubs");
+        test_double("hi");
+        expect(test_double).to.have.been.calledWith("hi");
+      });
+
+      it("will fail on expected/actual arguments mismatch, detailing the discrepancies.", function() {
+        // this is a pretty nasty assertion, but I wanted to make sure it captured the full error message
+        // and don't want to pull in the actual chai string template functions to use here
+        var test_double = td.function("dubs");
+        test_double("what");
+        expect(function() {
+          expect(test_double).to.have.been.calledWith("hi", "bye");
+        }).to.throw(chai.AssertionError, "AssertionError: expected " +
+                                         test_double +
+                                         " to have been called with " +
+                                         "[ \'hi\', \'bye\' ]" +
+                                         " but it received " +
+                                         "[ \'what\' ]");
+      });
+
+      it("throws an exception if called on an object that isn't a testdouble");
+      it("also works in a negated chain");
     });
   });
 });

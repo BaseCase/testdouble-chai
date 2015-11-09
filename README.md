@@ -8,7 +8,6 @@ Will hopefully exist in the near future!
 
 
 ## TODO
-- [ ] get this happening for `expect(dubs).to.have.been.calledWith("hi");`
 - [ ] fill out this list with the rest of the things we should support (e.g. multiple times in config, etc.)
 - [ ] submit testdouble.js PR to support slotting this in (based on changes in fake_testdouble.js)
 - [ ] make the README good
@@ -24,3 +23,4 @@ Will hopefully exist in the near future!
 - [x] learn how verify() works
 - [x] get this happening for `expect(dubs).to.have.been.called;`
 - [x] clean up spiked code so it's ready for the rest of this
+- [x] get this happening for `expect(dubs).to.have.been.calledWith("hi");`
