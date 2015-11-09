@@ -1,0 +1,19 @@
+{
+  "name": "testdouble-chai",
+  "version": "1.0.0",
+  "description": "Like [sinon-chai](https://github.com/domenic/sinon-chai) but for [testdouble.js](https://github.com/testdouble/testdouble.js).",
+  "main": "index.js",
+  "dependencies": {
+    "testdouble": "^0.6.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.3",
+    "testdouble": "^0.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
