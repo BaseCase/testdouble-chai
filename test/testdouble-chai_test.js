@@ -60,6 +60,18 @@ describe("testdouble-chai", function() {
       expect(this.subject).to.have.been.calledWith("hi");
     });
 
+    it("fails if the testdouble was not called", function() {
+      expect(function() {
+        expect(this.subject).to.have.been.calledWith("hi", "bye");
+      }.bind(this))
+      .to.throw(chai.AssertionError,
+          "AssertionError: expected " +
+          this.subject +
+          " to have been called with " +
+          "[ \'hi\', \'bye\' ]," +
+          " but it was not called.");
+    });
+
     it("fails on expected/actual arguments mismatch, detailing the discrepancies", function() {
       this.subject("what");
       expect(function() {
