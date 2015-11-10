@@ -21,7 +21,7 @@ describe("testdouble-chai", function() {
           expect(test_double).to.have.been.called;
         }).to.throw(chai.AssertionError, "AssertionError: expected " +
                                          test_double +
-                                         " to have been called but it was not.");
+                                         " to have been called, but it was not.");
       });
 
       it("throws an exception if called on an object that isn't a testdouble");
@@ -40,7 +40,7 @@ describe("testdouble-chai", function() {
             expect(test_double).not.to.have.been.called;
           }).to.throw(chai.AssertionError, "AssertionError: expected " +
                                             test_double +
-                                            " not to be called, but it was.");
+                                            " not to have been called, but it was.");
         });
       });
     });
@@ -63,7 +63,7 @@ describe("testdouble-chai", function() {
         }).to.throw(chai.AssertionError, "AssertionError: expected " +
                                          test_double +
                                          " to have been called with " +
-                                         "[ \'hi\', \'bye\' ]" +
+                                         "[ \'hi\', \'bye\' ]," +
                                          " but it received " +
                                          "[ \'what\' ]");
       });
@@ -84,7 +84,7 @@ describe("testdouble-chai", function() {
             expect(test_double).not.to.have.been.calledWith("bye");
           }).to.throw(chai.AssertionError, "AssertionError: expected " +
                                             test_double +
-                                            " not to be called with [ \'bye\' ], " +
+                                            " not to have been called with [ \'bye\' ], " +
                                             "but it was.");
         });
       });
