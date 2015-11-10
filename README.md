@@ -8,7 +8,6 @@ Will hopefully exist in the near future!
 
 
 ## TODO
-- [ ] complete pending tests
 - [ ] don't print expected/actual on simple .called checks
 - [ ] refactor
 - [ ] submit testdouble.js PR to support slotting this in (based on changes in fake_testdouble.js)
@@ -28,3 +27,8 @@ Will hopefully exist in the near future!
 - [x] clean up spiked code so it's ready for the rest of this
 - [x] get this happening for `expect(dubs).to.have.been.calledWith("hi");`
 - [x] fill out this list with the rest of the things we should support (e.g. multiple times in config, etc.)
+- [x] complete pending tests
+
+
+## notes
+* `.called` will fail if the function was called with arguments, which is consistent with `td.verify()`, but maybe not what the user would expect. Think about this...

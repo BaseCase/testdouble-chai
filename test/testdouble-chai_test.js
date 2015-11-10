@@ -37,8 +37,6 @@ describe("testdouble-chai", function() {
         .to.throw(Error, not_a_testdouble + " does not appear to be a testdouble object.");
       });
 
-      it("counts it as called regardless of arguments");
-
 
       describe("in a negated chain", function() {
         it("can assert that the testdouble wasn't called", function() {
