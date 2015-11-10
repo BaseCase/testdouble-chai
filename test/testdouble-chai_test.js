@@ -25,7 +25,24 @@ describe("testdouble-chai", function() {
       });
 
       it("throws an exception if called on an object that isn't a testdouble");
-      it("also works in a negated chain");
+      it("counts it as called regardless of arguments");
+
+      describe("in a negated chain", function() {
+        it("can assert that the testdouble wasn't called", function() {
+          var test_double = td.function("dubs");
+          expect(test_double).not.to.have.been.called;
+        });
+
+        it("fails if you call the testdouble when you said you wouldn't", function() {
+          var test_double = td.function("dubs");
+          test_double();
+          expect(function() {
+            expect(test_double).not.to.have.been.called;
+          }).to.throw(chai.AssertionError, "AssertionError: expected " +
+                                            test_double +
+                                            " not to be called, but it was.");
+        });
+      });
     });
 
 
@@ -52,7 +69,25 @@ describe("testdouble-chai", function() {
       });
 
       it("throws an exception if called on an object that isn't a testdouble");
-      it("also works in a negated chain");
+
+      describe("in a negated chain", function() {
+        it("can assert that the testdouble wasn't called with given args", function() {
+          var test_double = td.function("dubs");
+          test_double("bye");
+          expect(test_double).not.to.have.been.calledWith("hi");
+        });
+
+        it("fails if you call the testdouble with given args when you said you wouldn't", function() {
+          var test_double = td.function("dubs");
+          test_double("bye");
+          expect(function() {
+            expect(test_double).not.to.have.been.calledWith("bye");
+          }).to.throw(chai.AssertionError, "AssertionError: expected " +
+                                            test_double +
+                                            " not to be called with [ \'bye\' ], " +
+                                            "but it was.");
+        });
+      });
     });
   });
 });

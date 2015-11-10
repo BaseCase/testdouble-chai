@@ -13,6 +13,7 @@ Will hopefully exist in the near future!
 - [ ] submit testdouble.js PR to support slotting this in (based on changes in fake_testdouble.js)
 - [ ] make the README good
 - [ ] add a LICENSE
+- [ ] edit all the assertion error language to make it consistent
 - [ ] update package.json to reflect reality
 - [ ] figure out all the stuff you need for node installability and whatnot
 - [ ] post in testdouble.js issue #41
