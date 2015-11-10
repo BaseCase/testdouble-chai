@@ -28,7 +28,15 @@ describe("testdouble-chai", function() {
             " to have been called, but it was not.");
       });
 
-      it("throws an exception if called on an object that isn't a testdouble");
+      it("throws an exception if called on an object that isn't a testdouble", function() {
+        var not_a_testdouble = function() {};
+        not_a_testdouble();
+        expect(function() {
+          expect(not_a_testdouble).to.have.been.called;
+        }.bind(this))
+        .to.throw(Error, not_a_testdouble + " does not appear to be a testdouble object.");
+      });
+
       it("counts it as called regardless of arguments");
 
 
@@ -72,8 +80,6 @@ describe("testdouble-chai", function() {
             " but it received " +
             "[ \'what\' ]");
       });
-
-      it("throws an exception if called on an object that isn't a testdouble");
 
 
       describe("in a negated chain", function() {

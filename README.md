@@ -9,6 +9,7 @@ Will hopefully exist in the near future!
 
 ## TODO
 - [ ] complete pending tests
+- [ ] don't print expected/actual on simple .called checks
 - [ ] refactor
 - [ ] submit testdouble.js PR to support slotting this in (based on changes in fake_testdouble.js)
 - [ ] make the README good
