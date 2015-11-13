@@ -1,34 +1,51 @@
 # testdouble-chai
 
-Like [sinon-chai](https://github.com/domenic/sinon-chai) but for [testdouble.js](https://github.com/testdouble/testdouble.js).
+This is a tiny library that adds `.called` and `.calledWith` assertions to
+[chai](http://chaijs.com/) for use with
+[testdouble.js](https://github.com/testdouble/testdouble.js). These assertions
+can be used as syntactic sugar over the `testdouble.verify` function. Here are
+some examples:
 
-Will hopefully exist in the near future!
+## Use
 
-**Please note** this is not what I consider publicly usable yet. The README and code should be considered scratch work until I remove this disclaimer.
+```javascript
+it("can tell you if a testdouble object was called", function() {
+  var td = testdouble.function();
+  td();
+  expect(td).to.have.been.called;  // instead of `verify(td)`!
+});
+```
+
+or with arguments:
+
+```javascript
+it("can tell you if a testdouble object was called a certain way", function() {
+  var td = testdouble.function();
+  td("hi");
+  expect(td).to.have.been.calledWith("hi");  // instead of `verify(td("hi"))`!
+});
+```
+
+## Setup
+
+After installing the library with `npm install --save-dev testdouble-chai`,
+here's how to get chai to know about `testdouble-chai`:
+
+```javascript
+// at the top of a test file or in a test helper
+var td = require("testdouble");
+var chai = require("chai");
+var tdChai = require("testdouble-chai");
+chai.use(tdChai);
+```
+
+And you should be good to go! Check out `test/testdouble-chai_test.js` for an
+exhaustive description of how this library behaves.
+
 
 
 ## TODO
-- [ ] make the README good
 - [ ] add a LICENSE
 - [ ] update package.json to reflect reality
 - [ ] figure out all the stuff you need for node installability and whatnot
 - [ ] post in testdouble.js issue #41
-- [ ] post in trying_testdouble issue #1
-- [ ] update `require`s to point to regular testdouble instead of fake_testdouble
-- [ ] support for multiple calls (e.g. `.calledTwice`) -- not sure what the syntax should be for this yet
-
-## DONE
-- [x] learn how verify() works
-- [x] get this happening for `expect(dubs).to.have.been.called;`
-- [x] clean up spiked code so it's ready for the rest of this
-- [x] get this happening for `expect(dubs).to.have.been.calledWith("hi");`
-- [x] fill out this list with the rest of the things we should support (e.g. multiple times in config, etc.)
-- [x] complete pending tests
-- [x] don't print expected/actual on simple .called checks
-- [x] refactor
-- [x] submit testdouble.js PR to support slotting this in (based on changes in fake_testdouble.js)
-- [x] edit all the assertion error language to make it consistent
-
-
-## notes
-* `.called` will fail if the function was called with arguments, which is consistent with `td.verify()`, but maybe not what the user would expect. Think about this...
