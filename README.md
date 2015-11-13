@@ -45,7 +45,7 @@ exhaustive description of how this library behaves.
 
 
 ## TODO
-- [ ] add a LICENSE
+- [x] add a LICENSE
 - [ ] update package.json to reflect reality
 - [ ] figure out all the stuff you need for node installability and whatnot
 - [ ] post in testdouble.js issue #41
