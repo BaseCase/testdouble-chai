@@ -1,4 +1,4 @@
-var td = require('../lib/fake_testdouble');
+var td = require('testdouble');
 var chai = require('chai');
 var expect = chai.expect;
 var tdChai = require('../lib/testdouble-chai');
