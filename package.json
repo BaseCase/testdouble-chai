@@ -1,8 +1,10 @@
 {
   "name": "testdouble-chai",
-  "version": "1.0.0",
-  "description": "Like [sinon-chai](https://github.com/domenic/sinon-chai) but for [testdouble.js](https://github.com/testdouble/testdouble.js).",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Assertion sugar for testdouble.js's verify() function",
+  "homepage": "https://github.com/BaseCase/testdouble-chai",
+  "author": "Casey Brant",
+  "main": "lib/testdouble-chai.js",
   "dependencies": {
     "testdouble": "^0.6.0"
   },
@@ -12,8 +14,20 @@
     "testdouble": "^0.6.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
-  "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BaseCase/testdouble-chai"
+  },
+  "keywords": [
+    "tdd",
+    "bdd",
+    "mock",
+    "stub",
+    "spy",
+    "test double",
+    "double"
+  ]
 }
