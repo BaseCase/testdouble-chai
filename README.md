@@ -36,7 +36,7 @@ here's how to get chai to know about `testdouble-chai`:
 var td = require("testdouble");
 var chai = require("chai");
 var tdChai = require("testdouble-chai");
-chai.use(tdChai);
+chai.use(tdChai(td)); // make sure to call tdChai with td to inject the dependency
 ```
 
 And you should be good to go! Check out `test/testdouble-chai_test.js` for an

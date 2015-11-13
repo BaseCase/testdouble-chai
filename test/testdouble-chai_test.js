@@ -2,7 +2,7 @@ var td = require('testdouble');
 var chai = require('chai');
 var expect = chai.expect;
 var tdChai = require('../lib/testdouble-chai');
-chai.use(tdChai);
+chai.use(tdChai(td));
 
 
 describe("testdouble-chai", function() {
