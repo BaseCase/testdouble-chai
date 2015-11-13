@@ -8,7 +8,6 @@ Will hopefully exist in the near future!
 
 
 ## TODO
-- [ ] refactor
 - [ ] submit testdouble.js PR to support slotting this in (based on changes in fake_testdouble.js)
 - [ ] make the README good
 - [ ] add a LICENSE
@@ -28,6 +27,7 @@ Will hopefully exist in the near future!
 - [x] fill out this list with the rest of the things we should support (e.g. multiple times in config, etc.)
 - [x] complete pending tests
 - [x] don't print expected/actual on simple .called checks
+- [x] refactor
 
 
 ## notes
