@@ -1,6 +1,6 @@
 {
   "name": "testdouble-chai",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Assertion sugar for testdouble.js's verify() function",
   "homepage": "https://github.com/BaseCase/testdouble-chai",
   "author": "Casey Brant",
