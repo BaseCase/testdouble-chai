@@ -7,12 +7,12 @@
   "main": "lib/testdouble-chai.js",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.3",
-    "testdouble": "^0.6.0"
+    "chai": ">=3.4.1",
+    "mocha": ">=2.3.3",
+    "testdouble": ">=0.6.0"
   },
   "peerDependencies": {
-    "testdouble": "^0.6.0"
+    "testdouble": ">=0.6.0"
   },
   "scripts": {
     "test": "mocha test"
