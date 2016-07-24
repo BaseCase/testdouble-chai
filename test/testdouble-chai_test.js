@@ -15,8 +15,13 @@ describe("testdouble-chai", function() {
   });
 
   describe(".called", function() {
-    it("passes if the given testdouble was called", function() {
+    it("passes if the given testdouble was called with no arguments", function() {
       this.subject();
+      expect(this.subject).to.have.been.called;
+    });
+
+    it("passes if the given testdouble was called with any arguments", function() {
+      this.subject('hi');
       expect(this.subject).to.have.been.called;
     });
 
