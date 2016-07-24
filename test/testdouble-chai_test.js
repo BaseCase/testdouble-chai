@@ -10,6 +10,10 @@ describe("testdouble-chai", function() {
     this.subject = td.function("dubs");
   });
 
+  afterEach(function() {
+    td.reset();
+  });
+
   describe(".called", function() {
     it("passes if the given testdouble was called", function() {
       this.subject();
