@@ -5,9 +5,9 @@
   "homepage": "https://github.com/BaseCase/testdouble-chai",
   "author": "Casey Brant",
   "main": "lib/testdouble-chai.js",
-  "dependencies": {},
   "devDependencies": {
     "chai": ">=3.4.1",
+    "eslint": "^8.5.0",
     "mocha": ">=2.3.3",
     "testdouble": ">=0.6.0"
   },
