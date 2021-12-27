@@ -1,6 +1,6 @@
 # testdouble-chai
 
-This is a tiny library that adds `.called` and `.calledWith` assertions to
+This is a tiny library that adds `.called`, `.calledWith`, and `.calledTimes` assertions to
 [chai](http://chaijs.com/) for use with
 [testdouble.js](https://github.com/testdouble/testdouble.js). These assertions
 can be used as syntactic sugar over the `testdouble.verify` function. Here are
@@ -25,6 +25,21 @@ it("can tell you if a testdouble object was called a certain way", function() {
   expect(td).to.have.been.calledWith("hi");  // instead of `verify(td("hi"))`!
 });
 ```
+
+or for call counts:
+
+```javascript 
+it("can tell you if a testdouble object was called multiple times", function() {
+  var td = testdouble.function();
+  td("hi")
+  td("secondCall")
+  expect(td).to.have.been.calledTimes(2); // instead of `verify(td(), { ignoreExtraArgs: true, times: 2 })`
+})
+```
+
+In addition, `.calledOnce`, `.calledTwice`, and `.calledThrice` can be used 
+in place of `.calledTimes(1)`, `.calledTimes(2)`, and `.calledTimes(3)`, 
+respectively.
 
 ## Setup
 
